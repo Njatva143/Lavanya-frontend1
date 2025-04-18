@@ -2,6 +2,8 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
+import EmployeeList from './pages/EmployeeList';
+import SalarySlips from './pages/SalarySlips';
 
 const App = () => {
   return (
