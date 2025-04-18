@@ -1,5 +1,4 @@
 // src/components/SidebarLayout.jsx
-{
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Sidebar from './Sidebar';
@@ -12,5 +11,5 @@ const SidebarLayout = () => (
     </main>
   </div>
 );
+
 export default SidebarLayout;
-};
