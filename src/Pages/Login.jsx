@@ -1,16 +1,26 @@
-import React from 'react';
-
-const Login = () => {
+function Login() {
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
-      <div className="p-6 bg-white rounded shadow-md w-80">
-        <h2 className="text-2xl font-bold mb-4 text-center">Login</h2>
-        <input type="text" placeholder="Username" className="w-full p-2 mb-4 border rounded" />
-        <input type="password" placeholder="Password" className="w-full p-2 mb-4 border rounded" />
-        <button className="w-full p-2 bg-blue-500 text-white rounded">Login</button>
+      <div className="bg-white p-8 rounded-xl shadow-md w-96">
+        <h2 className="text-2xl font-bold mb-6 text-center">Lavanya Security Login</h2>
+        <form>
+          <input
+            type="text"
+            placeholder="Username"
+            className="w-full px-4 py-2 mb-4 border rounded-md"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            className="w-full px-4 py-2 mb-6 border rounded-md"
+          />
+          <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded-md">
+            Login
+          </button>
+        </form>
       </div>
     </div>
   );
-};
+}
 
 export default Login;
