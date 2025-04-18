@@ -1,18 +1,28 @@
-import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
-import Login from './Pages/Login';
-import Dashboard from './Pages/Dashboard';
-import EmployeeList from './Pages/EmployeeList';
-import SalarySlips from './Pages/SalarySlips';
+// src/App.jsx
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
+import Employees from './pages/Employees';
+import SalarySlips from './pages/SalarySlips';
+import Invoices from './pages/Invoices';
+import Payments from './pages/Payments';
+import Layout from './components/Layout';
 
-const App = () => {
+function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Navigate to="/login" />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/dashboard" element={<Dashboard />} />
-    </Routes>
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route element={<Layout />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/employees" element={<Employees />} />
+          <Route path="/salary-slips" element={<SalarySlips />} />
+          <Route path="/invoices" element={<Invoices />} />
+          <Route path="/payments" element={<Payments />} />
+        </Route>
+      </Routes>
+    </Router>
   );
-};
+}
 
 export default App;
