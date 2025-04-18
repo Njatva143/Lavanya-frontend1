@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import Login from '.src/pages/Login';
+import Login from '.src/Pages/Login';
 import Dashboard from './pages/Dashboard';
 
 const App = () => {
