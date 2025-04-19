@@ -6,7 +6,10 @@ import Employees from "./pages/Employees";
 // etc.
 
 function App() {
-  const isLoggedIn = localStorage.getItem("token"); // or however you manage auth
+  const isLoggedIn = localStorage.getItem("token");
+
+  // ✅ Add this line
+  console.log("isLoggedIn:", isLoggedIn);
 
   return (
     <Router>
@@ -16,7 +19,7 @@ function App() {
           <Route element={<DashboardLayout />}>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/employees" element={<Employees />} />
-            {/* Add more routes here */}
+            {/* other routes */}
           </Route>
         )}
       </Routes>
