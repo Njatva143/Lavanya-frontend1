@@ -11,16 +11,15 @@ const Login = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    // Simple login logic (replace with real backend call)
-    if (credentials.username === "admin" && credentials.password === "admin123") {
-      localStorage.setItem("isAuthenticated", "true");
-      navigate("/dashboard");
-    } else {
-      alert("Invalid username or password");
-    }
-  };
-
+  e.preventDefault();
+  if (credentials.username === "admin" && credentials.password === "admin123") {
+    localStorage.setItem("token", "dummy_token"); // ✅ Save a token
+    navigate("/dashboard"); // ✅ Go to dashboard
+  } else {
+    alert("Invalid username or password");
+  }
+};
+  
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
       <div className="bg-white shadow-lg rounded-2xl p-8 w-full max-w-md">
