@@ -1,11 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
-import Employees from "./pages/Employees";
-import SalarySlips from "./pages/SalarySlips";
-import Invoices from "./pages/Invoices";
-import Payments from "./pages/Payments";
-import Layout from "./components/Layout";
+// ... existing imports ...
 
 function App() {
   return (
@@ -15,11 +11,10 @@ function App() {
         
         {/* Protected routes under Layout */}
         <Route path="/" element={<Layout />}>
+          <Route index element={<Dashboard />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="employees" element={<Employees />} />
-          <Route path="salary-slips" element={<SalarySlips />} />
-          <Route path="invoices" element={<Invoices />} />
-          <Route path="payments" element={<Payments />} />
+          {/* ... other routes ... */}
         </Route>
       </Routes>
     </Router>
