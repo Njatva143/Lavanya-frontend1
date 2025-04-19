@@ -1,34 +1,29 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
-import DashboardLayout from "./layouts/DashboardLayout";
 import Dashboard from "./pages/Dashboard";
 import Employees from "./pages/Employees";
-// etc.
+import SalarySlips from "./pages/SalarySlips";
+import Invoices from "./pages/Invoices";
+import Payments from "./pages/Payments";
+import Layout from "./components/Layout";
 
 function App() {
-  localStorage.setItem("isAuthenticated", "true");
-  localStorage.setItem("token", "dummy_token"); // or "admin_token"
-
-  // ✅ Add this line
-  const isLoggedIn = localStorage.getItem("token");
-console.log("isLoggedIn:", isLoggedIn); // 👈 for testing
-
-if (!isLoggedIn) {
-  // user is not logged in, maybe redirect or hide sidebar
-  return <Navigate to="/login" />;
-}
   return (
     <Router>
       <Routes>
         <Route path="/login" element={<Login />} />
-        {isLoggedIn && (
-          <Route element={<DashboardLayout />}>
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/employees" element={<Employees />} />
-            {/* other routes */}
-          </Route>
-        )}
+        
+        {/* Protected routes under Layout */}
+        <Route path="/" element={<Layout />}>
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="employees" element={<Employees />} />
+          <Route path="salary-slips" element={<SalarySlips />} />
+          <Route path="invoices" element={<Invoices />} />
+          <Route path="payments" element={<Payments />} />
+        </Route>
       </Routes>
     </Router>
   );
 }
+
+export default App;
