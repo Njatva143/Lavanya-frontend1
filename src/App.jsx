@@ -1,14 +1,9 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';
-import Employees from './pages/Employees';
-import SalarySlips from './pages/SalarySlips';
-import Invoices from './pages/Invoices';
-import Payments from './pages/Payments';
-import Layout from './components/Layout';
+import DashboardLayout from './components/DashboardLayout';
 
 function App() {
-  const isLoggedIn = localStorage.getItem('token'); // ya jo login ka token use kar rahe ho
+  const isLoggedIn = localStorage.getItem('token'); // Adjust as per your auth logic
 
   return (
     <Router>
@@ -16,13 +11,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route
           path="/*"
-          element={
-            isLoggedIn ? (
-              <Layout />
-            ) : (
-              <Navigate to="/login" />
-            )
-          }
+          element={isLoggedIn ? <DashboardLayout /> : <Navigate to="/login" />}
         />
       </Routes>
     </Router>
