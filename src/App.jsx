@@ -10,8 +10,13 @@ function App() {
   localStorage.setItem("token", "dummy_token"); // or "admin_token"
 
   // ✅ Add this line
-  console.log("isLoggedIn:", isLoggedIn);
+  const isLoggedIn = localStorage.getItem("token");
+console.log("isLoggedIn:", isLoggedIn); // 👈 for testing
 
+if (!isLoggedIn) {
+  // user is not logged in, maybe redirect or hide sidebar
+  return <Navigate to="/login" />;
+}
   return (
     <Router>
       <Routes>
