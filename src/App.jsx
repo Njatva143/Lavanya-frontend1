@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Login from './Pages/Login';
 import Dashboard from './Pages/Dashboard';
 import Employees from './Pages/Employees';
+import Employees from './Pages/Employees';
 import SalarySlips from './Pages/SalarySlips';
 import Invoices from './Pages/Invoices';
 import Payments from './Pages/Payments';
