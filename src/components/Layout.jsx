@@ -1,15 +1,11 @@
-import React from "react";
-import Sidebar from "./Sidebar";
 import { Outlet } from "react-router-dom";
+import Sidebar from "./Sidebar";
 
 const Layout = () => {
   return (
-    <div className="flex min-h-screen bg-gray-100">
-      {/* Sidebar */}
+    <div className="flex">
       <Sidebar />
-
-      {/* Main content area */}
-      <main className="flex-1 p-6">
+      <main className="flex-1">
         <Outlet />
       </main>
     </div>
