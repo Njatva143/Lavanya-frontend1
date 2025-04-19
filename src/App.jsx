@@ -6,7 +6,8 @@ import Employees from "./pages/Employees";
 // etc.
 
 function App() {
-  const isLoggedIn = localStorage.getItem("token");
+  localStorage.setItem("isAuthenticated", "true");
+  localStorage.setItem("token", "dummy_token"); // or "admin_token"
 
   // ✅ Add this line
   console.log("isLoggedIn:", isLoggedIn);
