@@ -1,10 +1,18 @@
-import { Link } from "react-router-dom";
+import React from "react";
+import { Link, Navigate } from "react-router-dom";
 
 const Sidebar = () => {
+  const isLoggedIn = localStorage.getItem("token");
+  console.log("isLoggedIn:", isLoggedIn); // 👈 for testing
+
+  if (!isLoggedIn) {
+    return <Navigate to="/login" />;
+  }
+
   return (
-    <div className="w-64 bg-gray-800 text-white min-h-screen p-4">
-      <h2 className="text-xl font-bold mb-4">Lavanya Security</h2>
-      <nav className="flex flex-col space-y-2">
+    <div className="w-64 h-screen bg-gray-800 text-white p-4">
+      <h2 className="text-xl font-bold mb-6">Lavanya Security</h2>
+      <nav className="flex flex-col gap-4">
         <Link to="/dashboard">Dashboard</Link>
         <Link to="/employees">Employees</Link>
         <Link to="/salary-slips">Salary Slips</Link>
