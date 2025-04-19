@@ -7,10 +7,13 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Public route */}
         <Route path="/login" element={<Login />} />
-        <Route element={<Layout />}>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+
+        {/* Protected routes with Layout (includes Sidebar) */}
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="dashboard" element={<Dashboard />} />
         </Route>
       </Routes>
     </BrowserRouter>
