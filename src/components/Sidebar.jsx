@@ -1,37 +1,18 @@
-// src/components/Sidebar.jsx
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-const Sidebar = () => (
-  <nav className="w-64 bg-gray-800 text-white h-screen p-4">
-    <ul>
-      <li>
-        <NavLink to="/dashboard" className="block py-2 px-4 hover:bg-gray-700" activeClassName="bg-gray-700">
-          Dashboard
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to="/employees" className="block py-2 px-4 hover:bg-gray-700" activeClassName="bg-gray-700">
-          Employees
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to="/salary-slips" className="block py-2 px-4 hover:bg-gray-700" activeClassName="bg-gray-700">
-          Salary Slips
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to="/invoices" className="block py-2 px-4 hover:bg-gray-700" activeClassName="bg-gray-700">
-          Invoices
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to="/payments" className="block py-2 px-4 hover:bg-gray-700" activeClassName="bg-gray-700">
-          Payments
-        </NavLink>
-      </li>
-    </ul>
-  </nav>
-);
+const Sidebar = () => {
+  return (
+    <div className="w-64 bg-gray-800 text-white min-h-screen p-4">
+      <h2 className="text-xl font-bold mb-4">Lavanya Security</h2>
+      <nav className="flex flex-col space-y-2">
+        <Link to="/dashboard">Dashboard</Link>
+        <Link to="/employees">Employees</Link>
+        <Link to="/salary-slips">Salary Slips</Link>
+        <Link to="/invoices">Invoices</Link>
+        <Link to="/payments">Payments</Link>
+      </nav>
+    </div>
+  );
+};
 
 export default Sidebar;
