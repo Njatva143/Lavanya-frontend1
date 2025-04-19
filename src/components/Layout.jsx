@@ -1,26 +1,18 @@
-import Sidebar from './Sidebar';
-import { Routes, Route } from 'react-router-dom';
-import Dashboard from '../pages/Dashboard';
-import Employees from '../pages/Employees';
-import SalarySlips from '../pages/SalarySlips';
-import Invoices from '../pages/Invoices';
-import Payments from '../pages/Payments';
+import { Link } from 'react-router-dom';
 
-const Layout = () => {
+const Sidebar = () => {
   return (
-    <div className="flex">
-      <Sidebar />
-      <div className="flex-1 p-4">
-        <Routes>
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/employees" element={<Employees />} />
-          <Route path="/salary-slips" element={<SalarySlips />} />
-          <Route path="/invoices" element={<Invoices />} />
-          <Route path="/payments" element={<Payments />} />
-        </Routes>
-      </div>
+    <div className="w-64 h-screen bg-gray-800 text-white p-4">
+      <h2 className="text-xl font-bold mb-6">Lavanya Security</h2>
+      <nav className="flex flex-col gap-4">
+        <Link to="/dashboard">Dashboard</Link>
+        <Link to="/employees">Employees</Link>
+        <Link to="/salary-slips">Salary Slips</Link>
+        <Link to="/invoices">Invoices</Link>
+        <Link to="/payments">Payments</Link>
+      </nav>
     </div>
   );
 };
 
-export default Layout;
+export default Sidebar;
