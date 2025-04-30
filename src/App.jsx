@@ -14,12 +14,12 @@ function App() {
   <Route path="/login" element={<Login />} />
   <Route
     path="/*"
-       element={isLoggedIn ? <Layout /> : <Navigate to="/login" />}
-    >
-        <Route index element={<Dashboard />} />
-<Route path="dashboard" element={<Dashboard />} />
+    element={isLoggedIn ? <Layout /> : <Navigate to="/login" />}
+  >
+    <Route index element={<Dashboard />} />
+    <Route path="dashboard" element={<Dashboard />} />
   </Route>
-      </Routes>
+</Routes>
     </BrowserRouter>
   o)pp;
 }
