@@ -1,27 +1,25 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Login from './pages/Login';
-import SidebarLayout from './components/SidebarLayout';
-import Dashboard from './pages/Dashboard';
-import Employees from './pages/Employees';
-import SalarySlips from './pages/SalarySlips';
-import Invoices from './pages/Invoices';
-import Payments from './pages/Payments';
+import React from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import Layout from "./components/Layout";
 
-function App() {
+const App = () => {
+  const isLoggedIn = localStorage.getItem("token");
+
   return (
-    <BrowserRouter>
-      <Routes>
-  <Route path="/login" element={<Login />} />
-  <Route
-    path="/*"
-    element={isLoggedIn ? <Layout /> : <Navigate to="/login" />}
-  >
-    <Route index element={<Dashboard />} />
-    <Route path="dashboard" element={<Dashboard />} />
-  </Route>
-</Routes>
-    </BrowserRouter>
-  o)pp;
-}
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      {isLoggedIn ? (
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="dashboard" element={<Dashboard />} />
+        </Route>
+      ) : (
+        <Route path="*" element={<Navigate to="/login" />} />
+      )}
+    </Routes>
+  );
+};
 
 export default App;
