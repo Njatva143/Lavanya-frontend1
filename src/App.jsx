@@ -17,11 +17,11 @@ function App() {
        element={isLoggedIn ? <Layout /> : <Navigate to="/login" />}
     >
         <Route index element={<Dashboard />} />
-        <Route path="dashboard" element={<Dashboard />} />
-       </Route>
+<Route path="dashboard" element={<Dashboard />} />
+  </Route>
       </Routes>
     </BrowserRouter>
-  );
+  o)pp;
 }
 
 export default App;
