@@ -11,15 +11,14 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/" element={<SidebarLayout />}>
-          <Route index element={<Dashboard />} />
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="employees" element={<Employees />} />
-          <Route path="salary-slips" element={<SalarySlips />} />
-          <Route path="invoices" element={<Invoices />} />
-          <Route path="payments" element={<Payments />} />
-        </Route>
+  <Route path="/login" element={<Login />} />
+  <Route
+    path="/*"
+       element={isLoggedIn ? <Layout /> : <Navigate to="/login" />}
+    >
+        <Route index element={<Dashboard />} />
+        <Route path="dashboard" element={<Dashboard />} />
+       </Route>
       </Routes>
     </BrowserRouter>
   );
